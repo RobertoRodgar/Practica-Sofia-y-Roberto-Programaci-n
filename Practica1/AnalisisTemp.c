@@ -22,7 +22,7 @@
 	}
 	promedio = promedio / 7;
 
-	printf("El promedio de temperatura de la semana es: %0.1fºC\n", promedio);
+	printf("Temperatura promedio de la semana: %0.1fºC\n", promedio);
 	
 	for (int i = 0; i < 7; i++){ //Función que sobrescribe la funcion maxima y la cambia por la mas alta
 		if (temp_dia[i] > maxima){
@@ -31,7 +31,7 @@
 		} else {
 		}
 	}
-	printf("La temperatura máxima es: %dºC del día %s.\n",maxima, dias[guardar_dia]);
+	printf("Temperatura máxima: %dºC del día %s.\n",maxima, dias[guardar_dia]);
 		
 	for (int i = 0; i < 7; i++){ //Lo mismo que la máxima pero con la mínima.
 		if (temp_dia[i] < minima){
@@ -40,7 +40,7 @@
 		} else {
 		}
 	}
-	printf("La temperatura mínima es: %dºC del día %s.\n",minima, dias[guardar_dia]);
+	printf("Temperatura mínima: %dºC del día %s.\n",minima, dias[guardar_dia]);
 
 	for(int i = 0; i < 7; i++){ //Función que calcula los días que superan el promedio.
 		if (temp_dia[i] > promedio){
@@ -48,7 +48,7 @@
 		} else {
 		}
 	}
-	printf("Días con temperatura superiores al promedio: %d\n", contador);
+	printf("Número de días con temperaturas superiores al promedio: %d\n", contador);
 
 	printf("Dias con temperatura por debajo del promedio: \n");
 	for (int i = 0; i < 7; i ++){ //Función que imprime los días por debajo del promedio.
