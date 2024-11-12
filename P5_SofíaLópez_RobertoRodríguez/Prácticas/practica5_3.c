@@ -14,6 +14,8 @@ int main(){
 	int total_productos = 1;
 	//variables apartado 3
 	char respuesta[10];
+	int cantidad_añadida;
+	char pregunta[20];
 
 	//Apartado 1; ingreso de productos y cantidades
 	//¿Cuántos productos?
@@ -39,14 +41,47 @@ int main(){
 	}
 
 	//Apartado 3; rebastecimiento de productos
-	printf("¿Desea reabastecer algún producto? (si/no): ");
-	scanf("%s", respuesta);
-	for(int i = 0; i < total_productos; i++){
+
+	while (1==1){
+		
+		printf("¿Desea reabastecer algún producto? (si/no): ");
+		scanf("%s", respuesta);
+
 		if (strcmp(respuesta,"si") == 0){
 			printf("Ingrese el nombre del producto: ");
-			scanf(" %c", productos[i].nombre);
-			//printf("Cantidad a añadir: ");
-			//scanf(" %d", &productos[i].cantidad);
+			scanf(" %s", pregunta);
+			for(int i = 1;i < total_productos; i++){
+				if(strcmp(pregunta, productos[i].nombre)==0){
+				printf("Cantidad a añadir: ");
+				scanf(" %d", &cantidad_añadida);
+				productos[i].cantidad += cantidad_añadida;
+				
+				printf("Producto: %s cantidad: %d", productos[i].nombre, productos[i].cantidad);
+				}
+			}
+
+		}else{
+			break;
+		}	
+
+	}
+	printf("Productos de baja existencia:\n");
+	for (int i=0;i<cantidad;i++){
+		if (productos[i].cantidad<5){
+			printf("%s - %d unidades\n", producto[i].nombre, producto[i].stock);		
+		}
+	}
+
+		/*BÚSCAR UN PRODUCTO POR NOMBRE*/
+	printf("Ingrese el nombre del producto a buscar: ");
+	scanf("%s",pregunta);
+
+	for(int i=0;i<total_productos;i++){
+		if (strcmp(pregunta,producto[i].nombre)==0){ //compara el producto con toda la lista hasta que coincida	
+		printf("Cantidad en stock: %d Unidades\n",producto[i].stock);
+		break;
+		}else if(i==cantidad-1){
+			printf("El producto introducido no existe\n");
 		}
 	}
 
