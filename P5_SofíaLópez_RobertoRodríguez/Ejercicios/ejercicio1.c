@@ -3,7 +3,7 @@
 
 int main(){
 	//Definimos el array de 5 dimensiones
-	int inventario[2][3][4][5][10];
+	int inventario[2][3][4][5][10] = {0};
 
 	//Valores aleatorios
 	inventario[0][0][0][0][0] = 50;		//América, sede 1, televisores, modelo 0, lote 0 --> 50 unidades

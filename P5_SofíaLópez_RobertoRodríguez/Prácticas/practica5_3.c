@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <string.h> //librería para el strcmp
 
+/*
+	Autores: Roberto Rodríguez y Sofía López
+*/
+
 //struct apartado 1
 struct Producto{
 	char nombre[20];
@@ -41,47 +45,39 @@ int main(){
 	}
 
 	//Apartado 3; rebastecimiento de productos
-
-	while (1==1){
-		
-		printf("¿Desea reabastecer algún producto? (si/no): ");
-		scanf("%s", respuesta);
-
-		if (strcmp(respuesta,"si") == 0){
+	while(1){ //bucle infinito hasta que la respuesta sea no
+	printf("¿Desea reabastecer algún producto? (si/no): ");
+	scanf("%s", respuesta);
+		if (strcmp(respuesta,"si") == 0){ 	//si la respuesta es igual a "si", serán == 0, indicando que las cadenas son iguales
 			printf("Ingrese el nombre del producto: ");
 			scanf(" %s", pregunta);
 			for(int i = 1;i < total_productos; i++){
-				if(strcmp(pregunta, productos[i].nombre)==0){
+				if(strcmp(pregunta, productos[i].nombre) == 0){	//condicional para sumar la cantidad añadida anterior
+										//de un producto específico a la nueva
 				printf("Cantidad a añadir: ");
 				scanf(" %d", &cantidad_añadida);
 				productos[i].cantidad += cantidad_añadida;
-				
-				printf("Producto: %s cantidad: %d", productos[i].nombre, productos[i].cantidad);
 				}
 			}
-
-		}else{
-			break;
-		}	
-
+		} else { break; }	
 	}
-	printf("Productos de baja existencia:\n");
-	for (int i=0;i<cantidad;i++){
-		if (productos[i].cantidad<5){
-			printf("%s - %d unidades\n", producto[i].nombre, producto[i].stock);		
+
+	//Apartado 4; Cálculo de productos en baja existencia
+	printf("Productos en baja existencia:\n");
+	for(int i = 0;i < total_productos; i++){
+		if(productos[i].cantidad < 5){	//ponemos como que un stock por debajo de 5 es de baja existencia 
+			printf("%s - %d unidades\n", productos[i].nombre, productos[i].cantidad);		
 		}
 	}
 
-		/*BÚSCAR UN PRODUCTO POR NOMBRE*/
+	//Apartado 5; Buscar un producto por el nombre
 	printf("Ingrese el nombre del producto a buscar: ");
-	scanf("%s",pregunta);
-
-	for(int i=0;i<total_productos;i++){
-		if (strcmp(pregunta,producto[i].nombre)==0){ //compara el producto con toda la lista hasta que coincida	
-		printf("Cantidad en stock: %d Unidades\n",producto[i].stock);
-		break;
-		}else if(i==cantidad-1){
-			printf("El producto introducido no existe\n");
+	scanf("%s", pregunta);
+	for(int i = 0; i < total_productos; i++){
+		if(strcmp(pregunta, productos[i].nombre) == 0){ //condicional para buscar el producto por el que preguntas en el scanf	
+			printf("Cantidad en stock: %d unidades\n", productos[i].cantidad);
+			} else if (i == productos[i].cantidad - 1) {
+				printf("Este producto no existe\n");
 		}
 	}
 

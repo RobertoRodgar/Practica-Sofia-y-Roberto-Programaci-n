@@ -4,15 +4,16 @@
 #define aprobado 5.0 
 
 int main(){
-	double num_estudiantes[100]; // Array que guarda las notas de los estudiantes
-	int reemplazo;	// sustituto de numero de estudiantes (en etse casao pasa de 100 al numero que pongamos)
-	double nota_final; // variable que guarda la nota en el array
-	double promedio; // variable que almacena el promedio
-	int cuenta_aprobado = 0; //variable para ir contando los aprobados totales
-	int cuenta_suspenso = 0; //variable para ir contando los suspensos totales
-	double maxima = 0;	//variable para comparar maximas (empieza en 0 para que todas las notas que se comparen sean igual o mayores)
-	double minima = 100; // variable para comprobar minimas (empieza en un numero muy alto e imposible para que cualquier nota sea inferior al numero
-	int estudiante; //variable para guardar la posición del estudiantes
+	double num_estudiantes[100];	// Array que guarda las notas de los estudiantes
+	int reemplazo;			// sustituto de numero de estudiantes (en este caso pasa de 100 al numero que pongamos)
+	double nota_final; 		// variable que guarda la nota en el array
+	double promedio; 		// variable que almacena el promedio
+	int cuenta_aprobado = 0; 	// variable para ir contando los aprobados totales
+	int cuenta_suspenso = 0; 	// variable para ir contando los suspensos totales
+	double maxima = 0;		// variable para comparar maximas (empieza en 0 para que todas las notas que se comparen sean iguales o mayores)
+	double minima = 100; 		// variable para comprobar minimas (empieza en un numero muy alto para que cualquier nota sea inferior a 100)
+	int estudiante; 		// variable para guardar la posición del estudiantes
+	
 	//REGISTRAR NUMERO DE ESTUDIANTES
 	printf("Introduce el número de estudiantes: "); 
 	scanf("%d", &reemplazo);
